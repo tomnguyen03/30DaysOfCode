@@ -1,0 +1,256 @@
+:root {
+    --primary: #2175f5;
+    --blue: #2175f5;
+    --red: #f84848;
+    --green: #29b864;
+    --orange: #ff5521;
+    --black: #444;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+@mixin line {
+    padding: 10px 0;
+    border-bottom: 1px solid #dadada;
+}
+@mixin color($color) {
+    background-color: $color;
+    border-color: $color;
+}
+h3 {
+    text-transform: uppercase;
+    color: #444;
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+body {
+    background-color: #efefef;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        overflow: hidden;
+        .card {
+            display: flex;
+            width: 860px;
+            align-items: center;
+            justify-content: center;
+            .shoe-background {
+                position: relative;
+                width: 50%;
+                height: 475px;
+                box-shadow: -15px 0 35px rgba(0, 0, 0, 0.1), 0 -15px 35px rgba(0, 0, 0, 0.1), 0 15px 35px rgba(0, 0, 0, 0.1);
+                .gradients {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    .gradient {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        z-index: -2;
+                        top: 0;
+                        left: 0;
+                    }
+                    .first {
+                        z-index: -1;
+                    }
+                    .gradient[color="blue"] {
+                        background-image: linear-gradient(45deg, #0136af, #22abfa);
+                    }
+
+                    .gradient[color="red"] {
+                        background-image: linear-gradient(45deg, #d62926, #ee625f);
+                    }
+
+                    .gradient[color="green"] {
+                        background-image: linear-gradient(45deg, #11998e, #1ce669);
+                    }
+
+                    .gradient[color="orange"] {
+                        background-image: linear-gradient(45deg, #fc4a1a, #f7b733);
+                    }
+
+                    .gradient[color="black"] {
+                        background-image: linear-gradient(45deg, #111, #666);
+                    }
+                }
+                .logo {
+                    position: absolute;
+                    width: 100px;
+                    left: 20px;
+                    top: 20px;
+                }
+                .share {
+                    position: absolute;
+                    right: 20px;
+                    top: 20px;
+                    font-size: 16px;
+                    color: var(--primary);
+                    width: 50px;
+                    height: 50px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    text-align: center;
+                    transition: 0.5s;
+                    text-decoration: none;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                    i {
+                        line-height: 50px;
+                    }
+                }
+                .nike {
+                    text-transform: uppercase;
+                    color: #fff;
+                    opacity: 0.1;
+                    font-size: 150px;
+                    position: absolute;
+                    top: 30px;
+                    left: 30px;
+                }
+                .shoe {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 140%;
+                    transform: rotate(-20deg);
+                }
+            }
+            .info {
+                width: 50%;
+                background-color: #fff;
+                z-index: 1;
+                padding: 35px 40px;
+                box-shadow: 15px 0 35px rgba(0, 0, 0, 0.1), 0 -15px 35px rgba(0, 0, 0, 0.1), 0 15px 35px rgba(0, 0, 0, 0.1);
+                .shoe-name {
+                    div {
+                        display: flex;
+                        align-items: center;
+                        h1 {
+                            color: #333;
+                            line-height: 1;
+                        }
+                        span {
+                            text-transform: uppercase;
+                            padding: 3px 10px;
+                            background-color: var(--primary);
+                            border-radius: 5px;
+                            color: white;
+                            margin-left: 10px;
+                            font-size: 14px;
+                            transition: 0.5s;
+                        }
+                    }
+                    h3 {
+                        color: #444;
+                        font-weight: 500;
+                        font-size: 17px;
+                        margin-top: 5px;
+                    }
+                    @include line;
+                }
+                .description {
+                    @include line;
+                }
+                .color-container {
+                    @include line;
+                    .colors {
+                        display: flex;
+                        align-items: center;
+                        .color {
+                            width: 25px;
+                            height: 25px;
+                            border-radius: 50%;
+                            margin: 0 10px;
+                            border: 5px solid;
+                            cursor: pointer;
+                            transition: 0.5s;
+                        }
+                        .color[color="blue"] {
+                            @include color(var(--blue));
+                        }
+                        .color[color="green"] {
+                            @include color(var(--green));
+                        }
+                        .color[color="orange"] {
+                            @include color(var(--orange));
+                        }
+                        .color[color="red"] {
+                            @include color(var(--red));
+                        }
+                        .color[color="black"] {
+                            @include color(var(--black));
+                        }
+                        .active {
+                            border-color: #fff;
+                            box-shadow: 0 0 10px 0.5px rgba(0, 0, 0, 0.2);
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                .size-container {
+                    @include line;
+                    .sizes {
+                        display: flex;
+                        align-items: center;
+                        .size {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 5px;
+                            margin: 0 10px;
+                            cursor: pointer;
+                            transition: 0.5s;
+                            background-color: #eeeeee;
+                            line-height: 40px;
+                            text-align: center;
+                        }
+                        .active {
+                            background-color: var(--primary);
+                            color: white;
+                        }
+                    }
+                }
+                .buy-price {
+                    padding-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    a {
+                        i {
+                            margin-right: 10px;
+                        }
+                        text-decoration: none;
+                        font-size: 17px;
+                        font-weight: 600;
+                        color: white;
+                        background-color: var(--primary);
+                        padding: 10px;
+                        border-radius: 3px;
+                        transition: 0.5s;
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                    .price {
+                        display: flex;
+                        align-items: flex-start;
+                        i {
+                            font-size: 20px;
+                            margin-right: 3px;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

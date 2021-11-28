@@ -1,0 +1,209 @@
+:root {
+  --primary: #2175f5;
+  --blue: #2175f5;
+  --red: #f84848;
+  --green: #29b864;
+  --orange: #ff5521;
+  --black: #444; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif; }
+
+h3 {
+  text-transform: uppercase;
+  color: #444;
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 10px; }
+
+body {
+  background-color: #efefef; }
+  body .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden; }
+    body .container .card {
+      display: flex;
+      width: 860px;
+      align-items: center;
+      justify-content: center; }
+      body .container .card .shoe-background {
+        position: relative;
+        width: 50%;
+        height: 475px;
+        box-shadow: -15px 0 35px rgba(0, 0, 0, 0.1), 0 -15px 35px rgba(0, 0, 0, 0.1), 0 15px 35px rgba(0, 0, 0, 0.1); }
+        body .container .card .shoe-background .gradients {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0; }
+          body .container .card .shoe-background .gradients .gradient {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            top: 0;
+            left: 0; }
+          body .container .card .shoe-background .gradients .first {
+            z-index: -1; }
+          body .container .card .shoe-background .gradients .gradient[color="blue"] {
+            background-image: linear-gradient(45deg, #0136af, #22abfa); }
+          body .container .card .shoe-background .gradients .gradient[color="red"] {
+            background-image: linear-gradient(45deg, #d62926, #ee625f); }
+          body .container .card .shoe-background .gradients .gradient[color="green"] {
+            background-image: linear-gradient(45deg, #11998e, #1ce669); }
+          body .container .card .shoe-background .gradients .gradient[color="orange"] {
+            background-image: linear-gradient(45deg, #fc4a1a, #f7b733); }
+          body .container .card .shoe-background .gradients .gradient[color="black"] {
+            background-image: linear-gradient(45deg, #111, #666); }
+        body .container .card .shoe-background .logo {
+          position: absolute;
+          width: 100px;
+          left: 20px;
+          top: 20px; }
+        body .container .card .shoe-background .share {
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          font-size: 16px;
+          color: var(--primary);
+          width: 50px;
+          height: 50px;
+          background-color: #fff;
+          border-radius: 50%;
+          text-align: center;
+          transition: 0.5s;
+          text-decoration: none; }
+          body .container .card .shoe-background .share:hover {
+            transform: scale(1.1); }
+          body .container .card .shoe-background .share i {
+            line-height: 50px; }
+        body .container .card .shoe-background .nike {
+          text-transform: uppercase;
+          color: #fff;
+          opacity: 0.1;
+          font-size: 150px;
+          position: absolute;
+          top: 30px;
+          left: 30px; }
+        body .container .card .shoe-background .shoe {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 140%;
+          transform: rotate(-20deg); }
+      body .container .card .info {
+        width: 50%;
+        background-color: #fff;
+        z-index: 1;
+        padding: 35px 40px;
+        box-shadow: 15px 0 35px rgba(0, 0, 0, 0.1), 0 -15px 35px rgba(0, 0, 0, 0.1), 0 15px 35px rgba(0, 0, 0, 0.1); }
+        body .container .card .info .shoe-name {
+          padding: 10px 0;
+          border-bottom: 1px solid #dadada; }
+          body .container .card .info .shoe-name div {
+            display: flex;
+            align-items: center; }
+            body .container .card .info .shoe-name div h1 {
+              color: #333;
+              line-height: 1; }
+            body .container .card .info .shoe-name div span {
+              text-transform: uppercase;
+              padding: 3px 10px;
+              background-color: var(--primary);
+              border-radius: 5px;
+              color: white;
+              margin-left: 10px;
+              font-size: 14px;
+              transition: 0.5s; }
+          body .container .card .info .shoe-name h3 {
+            color: #444;
+            font-weight: 500;
+            font-size: 17px;
+            margin-top: 5px; }
+        body .container .card .info .description {
+          padding: 10px 0;
+          border-bottom: 1px solid #dadada; }
+        body .container .card .info .color-container {
+          padding: 10px 0;
+          border-bottom: 1px solid #dadada; }
+          body .container .card .info .color-container .colors {
+            display: flex;
+            align-items: center; }
+            body .container .card .info .color-container .colors .color {
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+              margin: 0 10px;
+              border: 5px solid;
+              cursor: pointer;
+              transition: 0.5s; }
+            body .container .card .info .color-container .colors .color[color="blue"] {
+              background-color: var(--blue);
+              border-color: var(--blue); }
+            body .container .card .info .color-container .colors .color[color="green"] {
+              background-color: var(--green);
+              border-color: var(--green); }
+            body .container .card .info .color-container .colors .color[color="orange"] {
+              background-color: var(--orange);
+              border-color: var(--orange); }
+            body .container .card .info .color-container .colors .color[color="red"] {
+              background-color: var(--red);
+              border-color: var(--red); }
+            body .container .card .info .color-container .colors .color[color="black"] {
+              background-color: var(--black);
+              border-color: var(--black); }
+            body .container .card .info .color-container .colors .active {
+              border-color: #fff;
+              box-shadow: 0 0 10px 0.5px rgba(0, 0, 0, 0.2);
+              transform: scale(1.1); }
+        body .container .card .info .size-container {
+          padding: 10px 0;
+          border-bottom: 1px solid #dadada; }
+          body .container .card .info .size-container .sizes {
+            display: flex;
+            align-items: center; }
+            body .container .card .info .size-container .sizes .size {
+              width: 40px;
+              height: 40px;
+              border-radius: 5px;
+              margin: 0 10px;
+              cursor: pointer;
+              transition: 0.5s;
+              background-color: #eeeeee;
+              line-height: 40px;
+              text-align: center; }
+            body .container .card .info .size-container .sizes .active {
+              background-color: var(--primary);
+              color: white; }
+        body .container .card .info .buy-price {
+          padding-top: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+          body .container .card .info .buy-price a {
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            color: white;
+            background-color: var(--primary);
+            padding: 10px;
+            border-radius: 3px;
+            transition: 0.5s; }
+            body .container .card .info .buy-price a i {
+              margin-right: 10px; }
+            body .container .card .info .buy-price a:hover {
+              transform: scale(1.1); }
+          body .container .card .info .buy-price .price {
+            display: flex;
+            align-items: flex-start; }
+            body .container .card .info .buy-price .price i {
+              font-size: 20px;
+              margin-right: 3px;
+              margin-top: 10px; }
