@@ -60,6 +60,18 @@ body {
                         left: 0;
                     }
                     .first {
+                        z-index: 0;
+                        animation: 1s width ease;
+                    }
+                    @keyframes width {
+                        from {
+                            width: 0%;
+                        }
+                        to {
+                            width: 100%;
+                        }
+                    }
+                    .second {
                         z-index: -1;
                     }
                     .gradient[color="blue"] {
@@ -123,6 +135,11 @@ body {
                     right: 0;
                     width: 140%;
                     transform: rotate(-20deg);
+                    opacity: 0;
+                    transition: 0.5s;
+                }
+                .show {
+                    opacity: 1;
                 }
             }
             .info {
