@@ -1,0 +1,133 @@
+:root {
+    --yellow: #ffd01a;
+    --yellowHover: #efb10a;
+    --black: #404040;
+    --blue: #1c9eff;
+    --blueHover: #007ad6;
+    --lightgray: #a0a0a0;
+    --bgLight: #f2f2f2;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+body {
+    background-color: #efefef;
+    background-image: linear-gradient(to bottom right, #ff9eaa 0% 65%, #e860ff 95% 100%);
+    background-position: center;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        overflow: hidden;
+        .card {
+            display: flex;
+            max-width: 360px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0px 1rem 1.5rem rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+            background-color: white;
+            .banner {
+                background-image: url("https://images.unsplash.com/photo-1638398498102-a5994f61d127?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60");
+                height: 11rem;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                img {
+                    width: 8rem;
+                    border-radius: 50%;
+                    height: 8rem;
+                    overflow: hidden;
+                    object-fit: cover;
+                    transform: translateY(50%);
+                    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+                    transition: 0.5s;
+                    &:hover {
+                        transform: translateY(50%) scale(1.3);
+                    }
+                }
+            }
+            .menu {
+                padding: 0 30px;
+                .info {
+                    padding: 85px 0 0 0;
+                    text-align: center;
+                    h2 {
+                        font-size: 28px;
+                        color: var(--black);
+                    }
+                    span {
+                        color: var(--lightgray);
+                        font-size: 14px;
+                    }
+                }
+                .follow-info {
+                    padding-top: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    a {
+                        text-decoration: none;
+                        width: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        transition: 0.5;
+                        padding: 10px;
+                        border-radius: 10px;
+                        span {
+                            color: var(--blue);
+                            font-size: 30px;
+                            font-weight: 700;
+                        }
+                        small {
+                            color: var(--lightgray);
+                            font-size: 14px;
+                        }
+                        &:hover {
+                            background-color: var(--bgLight);
+                            span {
+                                color: var(--blueHover);
+                            }
+                        }
+                    }
+                }
+                .button {
+                    padding-top: 20px;
+                    button {
+                        width: 100%;
+                        background-color: var(--yellow);
+                        padding: 15px 0;
+                        border-radius: 50px;
+                        color: var(--black);
+                        font-weight: 700;
+                        font-size: 18px;
+                        border: none;
+                        transition: 0.4s;
+                        &:hover {
+                            background-color: var(--yellowHover);
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                .description {
+                    padding: 20px 0 40px 0;
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: var(--lightgray);
+                }
+            }
+        }
+    }
+}
