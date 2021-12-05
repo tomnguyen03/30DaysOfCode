@@ -115,6 +115,7 @@ body {
                         font-size: 18px;
                         border: none;
                         transition: 0.4s;
+                        cursor: pointer;
                         &:hover {
                             background-color: var(--yellowHover);
                             transform: scale(1.1);

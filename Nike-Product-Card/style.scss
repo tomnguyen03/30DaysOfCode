@@ -12,6 +12,30 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+$XS: 480px;
+$SM: 768px;
+$MD: 1024px;
+$XL: 1170px;
+
+@mixin Responsive($canvas) {
+    @if $canvas == XS {
+        @media only screen and (max-width: $XS) {
+            @content;
+        }
+    } @else if $canvas == SM {
+        @media only screen and (max-width: $SM) {
+            @content;
+        }
+    } @else if $canvas == MD {
+        @media only screen and (max-width: $MD) {
+            @content;
+        }
+    } @else if $canvas == XL {
+        @media only screen and (max-width: $XL) {
+            @content;
+        }
+    }
+}
 @mixin line {
     padding: 10px 0;
     border-bottom: 1px solid #dadada;
@@ -35,16 +59,30 @@ body {
         justify-content: center;
         min-height: 100vh;
         overflow: hidden;
+        padding: 40px;
         .card {
             display: flex;
             width: 860px;
             align-items: center;
             justify-content: center;
+
+            @include Responsive(MD) {
+                flex-direction: column;
+                width: 100%;
+                box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.2);
+            }
             .shoe-background {
                 position: relative;
                 width: 50%;
                 height: 475px;
                 box-shadow: -15px 0 35px rgba(0, 0, 0, 0.1), 0 -15px 35px rgba(0, 0, 0, 0.1), 0 15px 35px rgba(0, 0, 0, 0.1);
+                @include Responsive(MD) {
+                    height: 450px;
+                    width: 100%;
+                }
+                @include Responsive(SM) {
+                    height: 350px;
+                }
                 .gradients {
                     position: absolute;
                     width: 100%;
@@ -128,6 +166,12 @@ body {
                     position: absolute;
                     top: 30px;
                     left: 30px;
+                    @include Responsive(MD) {
+                        font-size: 180px;
+                    }
+                    @include Responsive(SM) {
+                        font-size: 140px;
+                    }
                 }
                 .shoe {
                     position: absolute;
@@ -137,6 +181,15 @@ body {
                     transform: rotate(-20deg);
                     opacity: 0;
                     transition: 0.5s;
+                    @include Responsive(MD) {
+                        transform: rotate(-5deg);
+                        width: 80%;
+                        left: 0;
+                        bottom: -30px;
+                    }
+                    @include Responsive(SM) {
+                        bottom: 0;
+                    }
                 }
                 .show {
                     opacity: 1;
@@ -148,6 +201,9 @@ body {
                 z-index: 1;
                 padding: 35px 40px;
                 box-shadow: 15px 0 35px rgba(0, 0, 0, 0.1), 0 -15px 35px rgba(0, 0, 0, 0.1), 0 15px 35px rgba(0, 0, 0, 0.1);
+                @include Responsive(MD) {
+                    width: 100%;
+                }
                 .shoe-name {
                     div {
                         display: flex;
@@ -269,12 +325,5 @@ body {
                 }
             }
         }
-    }
-}
-@media (max-width: 1000px) {
-    .card {
-        flex-direction: column;
-        width: 100%;
-        box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.2);
     }
 }

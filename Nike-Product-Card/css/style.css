@@ -26,17 +26,30 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    overflow: hidden; }
+    overflow: hidden;
+    padding: 40px; }
     body .container .card {
       display: flex;
       width: 860px;
       align-items: center;
       justify-content: center; }
+      @media only screen and (max-width: 1024px) {
+        body .container .card {
+          flex-direction: column;
+          width: 100%;
+          box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.2); } }
       body .container .card .shoe-background {
         position: relative;
         width: 50%;
         height: 475px;
         box-shadow: -15px 0 35px rgba(0, 0, 0, 0.1), 0 -15px 35px rgba(0, 0, 0, 0.1), 0 15px 35px rgba(0, 0, 0, 0.1); }
+        @media only screen and (max-width: 1024px) {
+          body .container .card .shoe-background {
+            height: 450px;
+            width: 100%; } }
+        @media only screen and (max-width: 768px) {
+          body .container .card .shoe-background {
+            height: 350px; } }
         body .container .card .shoe-background .gradients {
           position: absolute;
           width: 100%;
@@ -101,6 +114,12 @@ body {
           position: absolute;
           top: 30px;
           left: 30px; }
+          @media only screen and (max-width: 1024px) {
+            body .container .card .shoe-background .nike {
+              font-size: 180px; } }
+          @media only screen and (max-width: 768px) {
+            body .container .card .shoe-background .nike {
+              font-size: 140px; } }
         body .container .card .shoe-background .shoe {
           position: absolute;
           bottom: 0;
@@ -109,6 +128,15 @@ body {
           transform: rotate(-20deg);
           opacity: 0;
           transition: 0.5s; }
+          @media only screen and (max-width: 1024px) {
+            body .container .card .shoe-background .shoe {
+              transform: rotate(-5deg);
+              width: 80%;
+              left: 0;
+              bottom: -30px; } }
+          @media only screen and (max-width: 768px) {
+            body .container .card .shoe-background .shoe {
+              bottom: 0; } }
         body .container .card .shoe-background .show {
           opacity: 1; }
       body .container .card .info {
@@ -117,6 +145,9 @@ body {
         z-index: 1;
         padding: 35px 40px;
         box-shadow: 15px 0 35px rgba(0, 0, 0, 0.1), 0 -15px 35px rgba(0, 0, 0, 0.1), 0 15px 35px rgba(0, 0, 0, 0.1); }
+        @media only screen and (max-width: 1024px) {
+          body .container .card .info {
+            width: 100%; } }
         body .container .card .info .shoe-name {
           padding: 10px 0;
           border-bottom: 1px solid #dadada; }
@@ -220,9 +251,3 @@ body {
               font-size: 20px;
               margin-right: 3px;
               margin-top: 10px; }
-
-@media (max-width: 1000px) {
-  .card {
-    flex-direction: column;
-    width: 100%;
-    box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.2); } }
